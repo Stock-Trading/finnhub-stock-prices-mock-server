@@ -52,3 +52,18 @@ Any connection query/token (e.g. `ws://localhost:8765?token=YOUR_KEY`) is accept
 ```bash
 python client_example.py --url ws://localhost:8765 --symbols AAPL MSFT TSLA
 ```
+
+## Running with Docker
+
+```bash
+docker compose up --build
+```
+
+Or plain Docker:
+
+```bash
+docker build -t finnhub-stock-prices-mock-server .
+docker run --rm -p 8765:8765 finnhub-stock-prices-mock-server
+```
+
+The server will be reachable at `ws://localhost:8765`.
